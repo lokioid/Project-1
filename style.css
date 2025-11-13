@@ -215,6 +215,7 @@ nav ul li a:active {
     scroll-behavior: smooth;
     gap: 1rem;
     padding: 1rem 0;
+    display: none;
   }
   
   .menu-card {
