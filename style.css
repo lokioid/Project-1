@@ -52,6 +52,9 @@ nav ul li a:active {
   border-bottom: 2px solid #a83232
 }
 
+section {
+  scroll-margin-top: 90px; /* sesuaikan dengan tinggi header */
+}
   
   /* Hero */
   .hero {
@@ -215,7 +218,14 @@ nav ul li a:active {
     scroll-behavior: smooth;
     gap: 1rem;
     padding: 1rem 0;
-  }
+      /* tambahan untuk sembunyikan scrollbar */
+  -ms-overflow-style: none;  /* IE/Edge lama */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;             /* Chrome/Safari */
+}
   
   .menu-card {
     min-width: 200px;
@@ -242,6 +252,7 @@ nav ul li a:active {
   }
   
   /* Review */
+  
   .review {
     padding: 2rem;
     background-color: #ffe4e1;
@@ -258,6 +269,14 @@ nav ul li a:active {
     object-fit: cover;
     margin-bottom: 1rem;
   }  
+
+  .nav-btn {
+    width: 2.5rem;       /* ukuran tetap */
+    height: 2.5rem;      /* ukuran tetap */
+    min-width: 2.5rem;   /* cegah mengecil */
+    min-height: 2.5rem;
+    border-radius: 50%;
+  }
   
   .stars {
     font-size: 1.2rem;
@@ -331,13 +350,204 @@ nav ul li a:active {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
   
+      body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f1ec;
+      margin: 0;
+      padding: 0;
+    }
+
+    .feedback-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 2rem;
+      justify-content: center;
+    }
+
+    .review, .contact {
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
+    }
+
+    /* === TESTIMONI === */
+    .review {
+      background-color: #fffaf7;
+      padding: 1.5rem;
+      border-radius: 12px;
+    scroll-margin-top: 80px; /* sesuaikan dengan tinggi header */
+}
+    
+
+    .review h2 {
+      color: #a94442;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .testimonial-wrapper {
+      display: flex;
+      align-items: center;  
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .testimonial-viewer {
+      flex: 1;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .testimonial-card {
+      display: none;
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 100%;
+      text-align: center;
+      width: 350px;
+      flex: none;
+    }
+
+    .testimonial-card.active {
+      display: block;
+    }
+
+    .testimonial-card h3 {
+      color:  #b85c5c;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      max-height: 200px;
+      overflow-y: auto;
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+
+    .stars {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: gold;
+      letter-spacing: 0.2rem;
+    }
+
+    .review-text {
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #444;
+      width: 300px;
+      flex: none;
+      max-height: 200px;
+      overflow-y: auto;
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+
+    .nav-btn {
+      background-color: #a94442;
+      color: white;
+      border: none;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* === FORMULIR === */
+    .contact h2 {
+      color: #b85c5c;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    form label {
+      display: block;
+      margin: 0.5rem 0;
+      font-weight: 500;
+    }
+
+    .rating-stars {
+      display: flex;
+      gap: 0.4rem;
+      font-size: 1.5rem;
+      justify-content: center;
+      margin: 0.5rem 0 1rem 0;
+    }
+
+    .rating-stars span {
+      cursor: pointer;
+      color: #ccc;
+      transition: color 0.2s ease;
+    }
+
+    .rating-stars span.active {
+      color: gold;
+    }
+
+.checkbox-wrapper {
+  margin-top: 1rem;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin: 0;
+  width: 18px;
+  height: 18px;
+}
+
+    form button {
+      background-color: #b85c5c;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 1rem;
+      width: 100%;
+    }
   
   /* Footer */
   footer {
     background-color: #f8dada;
     padding: 2rem;
     color: #333;
-  }
+}
   
   .footer-container {
     display: flex;
@@ -468,7 +678,7 @@ nav ul li a:active {
   .footer-bottom {
     width: 100%;
     text-align: left;
-    background-color: #f08080;
+    background-color: #b85c5c;
     color: white;
     padding: 1rem;
     margin-top: 2rem;
