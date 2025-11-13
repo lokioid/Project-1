@@ -226,7 +226,6 @@ section {
 .carousel-track::-webkit-scrollbar {
   display: none;             /* Chrome/Safari */
 }
-  
   .menu-card {
     min-width: 200px;
     background-color: #fff;
